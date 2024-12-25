@@ -9,23 +9,26 @@
             background: linear-gradient(45deg, black, gray); /* Schwarz-Grau Verlauf */
             color: white; /* Weißer Text */
             font-family: Arial, sans-serif; /* Schriftart */
-            text-align: center; /* Text zentriert */
             height: 100vh; /* Volle Bildschirmhöhe */
             margin: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Text vertikal zentrieren */
+            align-items: center; /* Zentriert alles horizontal */
+            justify-content: flex-start; /* Setzt die Position der Elemente nach oben */
+            padding-top: 30px; /* Abstand zum oberen Rand */
         }
 
         h1 {
             font-weight: bold; /* Fettdruck */
             font-size: 3em; /* Größerer Titel */
             color: white; /* Weißer Text */
+            margin: 0;
         }
 
         h2 {
             font-weight: bold; /* Fettdruck */
             font-size: 1.5em; /* Etwas kleinerer Text */
+            margin-top: 20px; /* Abstand zum Titel */
         }
 
         .center-text {
@@ -34,6 +37,7 @@
             background: linear-gradient(45deg, purple, pink, black); /* Lila, Pink, Schwarz Verlauf */
             -webkit-background-clip: text; /* Text mit Verlauf füllen */
             color: transparent; /* Textfarbe transparent, damit Verlauf sichtbar ist */
+            margin-top: 50px; /* Abstand nach dem Untertitel */
         }
     </style>
 </head>
