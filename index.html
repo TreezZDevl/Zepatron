@@ -6,44 +6,140 @@
     <title>Zepatron</title>
     <style>
         body {
-            background: linear-gradient(45deg, black, gray); /* Schwarz-Grau Verlauf */
-            color: white; /* Weißer Text */
-            font-family: Arial, sans-serif; /* Schriftart */
-            height: 100vh; /* Volle Bildschirmhöhe */
             margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #121212;
+            font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Zentriert alles horizontal */
-            justify-content: flex-start; /* Setzt die Position der Elemente nach oben */
-            padding-top: 30px; /* Abstand zum oberen Rand */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         h1 {
-            font-weight: bold; /* Fettdruck */
-            font-size: 3em; /* Größerer Titel */
-            color: white; /* Weißer Text */
-            margin: 0;
+            font-size: 3em;
+            color: #9b59b6; /* Lila */
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 5px black;
         }
 
-        h2 {
-            font-weight: bold; /* Fettdruck */
-            font-size: 1.5em; /* Etwas kleinerer Text */
-            margin-top: 20px; /* Abstand zum Titel */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
         }
 
-        .center-text {
-            font-size: 4em; /* Größerer Text für "Hallo" */
+        .button {
+            background: linear-gradient(45deg, #8a2be2, #ff007f, #000000); /* Lila, Pink, Schwarz, Blau Mischungen */
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* 3D Schattierung */
+            min-width: 160px;
+            min-height: 60px;
+        }
+
+        .button:hover {
+            transform: translateY(-9mm);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Größerer Schatten beim Hover */
+        }
+
+        footer {
+            position: fixed;
+            bottom: 20px;
+            color: #00ffff; /* Neon Blau */
             font-weight: bold;
-            background: linear-gradient(45deg, purple, pink, black); /* Lila, Pink, Schwarz Verlauf */
-            -webkit-background-clip: text; /* Text mit Verlauf füllen */
-            color: transparent; /* Textfarbe transparent, damit Verlauf sichtbar ist */
-            margin-top: 90px; /* Abstand nach dem Untertitel */
+            font-size: 1em;
+        }
+
+        .content {
+            width: 80%;
+            max-width: 800px;
+            text-align: left;
+            color: #fff;
+            margin-top: 50px;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #8a2be2;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .back-button:hover {
+            background: #ff007f;
         }
     </style>
 </head>
-<body>
-    <h1>Zepatron</h1>
-    <h2>Welcome To Zepatrons Page!</h2>
-    <div class="center-text">Hallo</div>
+<body id="mainPage">
+
+    <h1>official Page from Zepatron Nuking Hub</h1>
+
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='https://discord.gg/'">Discord</button>
+        <button class="button" onclick="showRules()">Rules</button>
+        <button class="button" onclick="showInfo()">Info</button>
+    </div>
+
+    <footer>Made by Ztr0x</footer>
+
+    <script>
+        function showRules() {
+            document.body.innerHTML = `
+                <h1 style="color: #9b59b6;">Rules</h1>
+                <div class="content">
+                    <h2>Rules:</h2>
+                    <ol>
+                        <li>No pretend it's your bot</li>
+                        <li>No alts</li>
+                        <li>Dont break any kind of rules</li>
+                        <li>Respect tos</li>
+                        <li>Respect Admins</li>
+                        <li>No Realm Love</li>
+                        <li>Respect privacy</li>
+                    </ol>
+                </div>
+                <button class="back-button" onclick="goBack()">← Back</button>
+            `;
+        }
+
+        function showInfo() {
+            document.body.innerHTML = `
+                <h1 style="color: #9b59b6;">Information</h1>
+                <div class="content">
+                    <h2>Info:</h2>
+                    <p>Web made by treezycheats</p>
+                    <p>Bot made by treezycheats</p>
+                    <p>Owner:</p>
+                    <p>treezycheats</p>
+                    <p>Admins:</p>
+                    <p>kusaxn</p>
+                    <p>Partners:</p>
+                    <p>none</p>
+                    <p>Helper:</p>
+                    <p>Anonymous</p>
+                </div>
+                <button class="back-button" onclick="goBack()">← Back</button>
+            `;
+        }
+
+        function goBack() {
+            location.reload(); // Die Seite neu laden
+        }
+    </script>
 </body>
 </html>
