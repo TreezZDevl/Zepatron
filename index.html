@@ -3,144 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zepatron</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background-color: #121212;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3em;
-            color: #9b59b6; /* Lila */
-            margin-bottom: 50px;
-            text-shadow: 2px 2px 5px black;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            width: 70%;
-        }
-
-        .button {
-            background: linear-gradient(45deg, #8a2be2, #ff007f, #000000); /* Lila, Pink, Schwarz, Blau Mischungen */
-            color: white;
-            padding: 20px 40px;
-            border: none;
-            border-radius: 10px;
-            text-transform: uppercase;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* 3D Schattierung */
-            min-width: 160px;
-            min-height: 60px;
-        }
-
-        .button:hover {
-            transform: translateY(-9mm);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Größerer Schatten beim Hover */
-        }
-
-        footer {
-            position: fixed;
-            bottom: 20px;
-            color: #00ffff; /* Neon Blau */
-            font-weight: bold;
-            font-size: 1em;
-        }
-
-        .content {
-            width: 80%;
-            max-width: 800px;
-            text-align: left;
-            color: #fff;
-            margin-top: 50px;
-        }
-
-        .back-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #8a2be2;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-transform: uppercase;
-        }
-
-        .back-button:hover {
-            background: #ff007f;
-        }
-    </style>
+    <title>Windows 11 Simulation</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body id="mainPage">
-
-    <h1>official Page from Zepatron Nuking Hub</h1>
-
-    <div class="button-container">
-        <button class="button" onclick="window.location.href='https://discord.gg/mcgRKx8HBR'">Discord</button>
-        <button class="button" onclick="showRules()">Rules</button>
-        <button class="button" onclick="showInfo()">Info</button>
+<body>
+    <div class="taskbar">
+        <div class="start-menu">
+            <button id="start-btn">Start</button>
+        </div>
+        <div class="taskbar-icons">
+            <div class="taskbar-icon" onclick="toggleApp('discord')">
+                <img src="discord-icon.png" alt="Discord">
+            </div>
+            <div class="taskbar-icon" onclick="toggleApp('vscode')">
+                <img src="vscode-icon.png" alt="Visual Studio Code">
+            </div>
+            <div class="taskbar-icon" onclick="toggleApp('terminal')">
+                <img src="terminal-icon.png" alt="Terminal">
+            </div>
+        </div>
     </div>
 
-    <footer>Made by treezycheats</footer>
+    <div class="desktop">
+        <div id="discord" class="app-window hidden">
+            <div class="window-header">
+                <span>Discord</span>
+                <button class="close-btn" onclick="closeApp('discord')">X</button>
+            </div>
+            <div class="app-content">
+                <p>Discord App Content</p>
+            </div>
+        </div>
+        <div id="vscode" class="app-window hidden">
+            <div class="window-header">
+                <span>Visual Studio Code</span>
+                <button class="close-btn" onclick="closeApp('vscode')">X</button>
+            </div>
+            <div class="app-content">
+                <p>Visual Studio Code Content</p>
+            </div>
+        </div>
+        <div id="terminal" class="app-window hidden">
+            <div class="window-header">
+                <span>Terminal</span>
+                <button class="close-btn" onclick="closeApp('terminal')">X</button>
+            </div>
+            <div class="app-content">
+                <p>Terminal App Content</p>
+            </div>
+        </div>
+    </div>
 
-    <script>
-        function showRules() {
-            document.body.innerHTML = `
-                <h1 style="color: #9b59b6;">Rules</h1>
-                <div class="content">
-                    <h2>Rules:</h2>
-                    <ol>
-                        <li>Follow Discords Terms and services</li>
-                        <li>Do not have any malicious intent when using Binary. We are not responsible for any damages or how user uses the bot.</li>
-                        <li>Do not post any realm codes in Binary</li>
-                        <li>Have common sense</li>
-                        <li>Follow Binary Agreement</li>
-                        <li>Respect Admins</li>
-                        <li>Respect privacy</li>
-                        <li>No skidding</li>
-                    </ol>
-                </div>
-                <button class="back-button" onclick="goBack()">← Back</button>
-            `;
-        }
-
-        function showInfo() {
-            document.body.innerHTML = `
-                <h1 style="color: #9b59b6;">Information</h1>
-                <div class="content">
-                    <h2>Info:</h2>
-                    <p>Web made by treezycheats</p>
-                    <p>Bot made by treezycheats</p>
-                    <p>Owner:</p>
-                    <p>treezycheats</p>
-                    <p>Admins:</p>
-                    <p>kusaxn</p>
-                    <p>Partners:</p>
-                    <p>none</p>
-                    <p>Helper:</p>
-                    <p>Anonymous</p>
-                </div>
-                <button class="back-button" onclick="goBack()">← Back</button>
-            `;
-        }
-
-        function goBack() {
-            location.reload(); // Die Seite neu laden
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
