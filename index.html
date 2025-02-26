@@ -35,13 +35,19 @@
 
         .container {
             display: flex;
-            flex-direction: column; /* Buttons untereinander */
             justify-content: center;
             align-items: center;
+            position: absolute;
+            left: 20px; /* Buttons nach links verschieben */
+            top: 50%;
+            transform: translateY(-50%); /* Vertikale Mitte */
         }
 
         .buttons {
-            margin-top: 100px; /* Abstand nach dem Titel */
+            display: flex;
+            flex-direction: column; /* Buttons untereinander */
+            align-items: flex-start; /* Buttons links ausrichten */
+            gap: 15px; /* Abstand zwischen den Buttons */
         }
 
         button {
@@ -51,7 +57,6 @@
             font-size: 1.5rem;
             font-weight: bold;
             padding: 15px;
-            margin: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
             border-radius: 5px;
