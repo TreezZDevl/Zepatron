@@ -52,6 +52,16 @@
             gap: 15px; /* Abstand zwischen den Buttons */
         }
 
+        .right-buttons {
+            position: absolute;
+            right: 20px; /* Buttons nach rechts verschieben */
+            top: 50%;
+            transform: translateY(-50%); /* Vertikale Mitte */
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Abstand zwischen den Buttons */
+        }
+
         button {
             background: linear-gradient(45deg, #ff80c0, #9b59b6, #e74c3c, #3498db); /* Alien Mix */
             border: none;
@@ -74,6 +84,47 @@
         button:focus {
             outline: none;
         }
+
+        /* Für die neuen Seiten */
+        .page {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .page h2 {
+            color: #8a2be2; /* Lila */
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .page ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .page ul li {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #00bfff; /* Hellblau */
+        }
     </style>
 </head>
 <body>
@@ -85,5 +136,60 @@
             <button>Shop</button>
         </div>
     </div>
+    <div class="right-buttons">
+        <button onclick="showPage('info')">Info</button>
+        <button onclick="showPage('update')">Update</button>
+        <button onclick="showPage('staff')">Staff</button>
+    </div>
+
+    <!-- Seiteninhalte -->
+    <div id="info" class="page">
+        <h2>Information</h2>
+        <ul>
+            <li>Made by Chat</li>
+            <li>Made in Germany</li>
+            <li>Made for MCBE</li>
+        </ul>
+        <button onclick="closePage()">Schließen</button>
+    </div>
+
+    <div id="update" class="page">
+        <h2>Update</h2>
+        <ul>
+            <li>Version 1.0</li>
+            <li>Neue Features hinzugefügt</li>
+            <li>Bugfixes durchgeführt</li>
+        </ul>
+        <button onclick="closePage()">Schließen</button>
+    </div>
+
+    <div id="staff" class="page">
+        <h2>Staff</h2>
+        <ul>
+            <li>Chat (Developer)</li>
+            <li>UCCT (Designer)</li>
+            <li>TreezZDevl (GitHub Maintainer)</li>
+        </ul>
+        <button onclick="closePage()">Schließen</button>
+    </div>
+
+    <div class="footer">
+        <p>web made by UCCT</p>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(function(page) {
+                page.style.display = 'none';
+            });
+            document.getElementById(pageId).style.display = 'flex';
+        }
+
+        function closePage() {
+            document.querySelectorAll('.page').forEach(function(page) {
+                page.style.display = 'none';
+            });
+        }
+    </script>
 </body>
 </html>
