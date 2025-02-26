@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.desktop {
+    height: 100vh;
+    background-color: #2d2d2d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.taskbar {
+    background-color: #1c1c1c;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.taskbar-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.taskbar-icon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskbar-icon img {
+    width: 100%;
+}
+
+.start-menu {
+    display: flex;
+    align-items: center;
+}
+
+.start-menu button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.start-menu button:hover {
+    background-color: #444;
+}
+
+.app-window {
+    background-color: #333;
+    width: 400px;
+    height: 300px;
+    margin: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.window-header {
+    background-color: #444;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.window-header button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.window-header button:hover {
+    background-color: #cc0000;
+}
+
+.app-content {
+    padding: 20px;
+    background-color: #222;
+}
+
+.hidden {
+    display: none;
+}
