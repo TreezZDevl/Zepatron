@@ -3,57 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows 11 Simulation</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Spam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('logo.png'); /* Bild als Hintergrund */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            color: #8a2be2; /* Lila */
+            font-size: 4rem;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .buttons {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff80c0, #9b59b6, #e74c3c, #3498db); /* Alien Mix */
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 15px;
+            margin: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #ff66b3, #8e44ad, #c0392b, #2980b9); /* Dunklerer Alien Mix */
+            color: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="taskbar">
-        <div class="start-menu">
-            <button id="start-btn">Start</button>
-        </div>
-        <div class="taskbar-icons">
-            <div class="taskbar-icon" onclick="toggleApp('discord')">
-                <img src="discord-icon.png" alt="Discord">
-            </div>
-            <div class="taskbar-icon" onclick="toggleApp('vscode')">
-                <img src="vscode-icon.png" alt="Visual Studio Code">
-            </div>
-            <div class="taskbar-icon" onclick="toggleApp('terminal')">
-                <img src="terminal-icon.png" alt="Terminal">
-            </div>
+    <div class="container">
+        <h1>Spam</h1>
+        <div class="buttons">
+            <button onclick="window.location.href='https://discord.gg/crashing'">Discord</button>
+            <button onclick="window.location.href='https://github.com/TreezZDevl'">Github</button>
+            <button>Shop</button>
         </div>
     </div>
-
-    <div class="desktop">
-        <div id="discord" class="app-window hidden">
-            <div class="window-header">
-                <span>Discord</span>
-                <button class="close-btn" onclick="closeApp('discord')">X</button>
-            </div>
-            <div class="app-content">
-                <p>Discord App Content</p>
-            </div>
-        </div>
-        <div id="vscode" class="app-window hidden">
-            <div class="window-header">
-                <span>Visual Studio Code</span>
-                <button class="close-btn" onclick="closeApp('vscode')">X</button>
-            </div>
-            <div class="app-content">
-                <p>Visual Studio Code Content</p>
-            </div>
-        </div>
-        <div id="terminal" class="app-window hidden">
-            <div class="window-header">
-                <span>Terminal</span>
-                <button class="close-btn" onclick="closeApp('terminal')">X</button>
-            </div>
-            <div class="app-content">
-                <p>Terminal App Content</p>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
