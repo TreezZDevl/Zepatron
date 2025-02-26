@@ -14,7 +14,9 @@
         body {
             font-family: Arial, sans-serif;
             background-image: url('logo.png'); /* Bild als Hintergrund */
-            background-size: cover;
+            background-size: cover; /* Das Bild passt sich der gesamten Seite an */
+            background-position: center; /* Bild wird in der Mitte der Seite zentriert */
+            background-repeat: no-repeat; /* Verhindert das Wiederholen des Hintergrundbilds */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -27,22 +29,19 @@
             font-size: 4rem;
             font-weight: bold;
             position: absolute;
-            top: 10px;
+            top: 20px;
             width: 100%;
         }
 
         .container {
             display: flex;
+            flex-direction: column; /* Buttons untereinander */
             justify-content: center;
             align-items: center;
-            height: 100%;
         }
 
         .buttons {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+            margin-top: 100px; /* Abstand nach dem Titel */
         }
 
         button {
@@ -56,6 +55,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             border-radius: 5px;
+            width: 200px; /* Breite der Buttons */
         }
 
         button:hover {
